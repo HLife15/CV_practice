@@ -1,6 +1,9 @@
 import numpy as np
 import cv2 as cv
-from Sobel_edge import drawText # 안되는 이유를 모르겠음
+
+def drawText(img, text, org=(10, 25), fontFace=cv.FONT_HERSHEY_DUPLEX, fontScale=0.6, color=(0, 0, 0), colorBoundary=(255, 255, 255)):
+    cv.putText(img, text, org, fontFace, fontScale, colorBoundary, thickness=2)
+    cv.putText(img, text, org, fontFace, fontScale, color)
 
 # 회색 이미지 불러오기
 img = cv.imread('C:\\Users\\USER\\Desktop\\kleague.png', cv.IMREAD_GRAYSCALE)
@@ -46,7 +49,7 @@ while True:
         adaptive_blocksize = max(adaptive_blocksize - 2, 3)
     elif key == ord('>') or key == ord('.'):
         adaptive_C += 1
-    elif key == ord('>') or key == ord('.'):
+    elif key == ord('<') or key == ord(','):
         adaptive_C -= 1  
 
 cv.destroyAllWindows()
