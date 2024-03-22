@@ -14,7 +14,7 @@ img_list = [
     'C:\\Users\\USER\\Desktop\\profile4.png',
 ]
 
-    # 컨트롤 파라미터 초기화
+# 컨트롤 파라미터 초기화
 edge_threshold = 0.1
 img_select = 3
 
